@@ -1,3 +1,4 @@
 Under development
 -----------------
-- Initial falltergeist code extraction
+- GitHub Actions build (alexeevdv)
+- Initial falltergeist code extraction (alexeevdv)

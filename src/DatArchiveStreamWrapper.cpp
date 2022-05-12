@@ -1,6 +1,6 @@
 #include "DatArchiveStreamWrapper.h"
 #include <algorithm>
-#include <exception>
+#include <string>
 
 namespace Falltergeist::VFS {
     DatArchiveStreamWrapper::DatArchiveStreamWrapper(const std::string& path) {
