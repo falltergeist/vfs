@@ -45,26 +45,20 @@ target_include_directories(${PROJECT_NAME}
 
 # without it public headers won't get installed
 set(PUBLIC_HEADERS
-    include/falltergeist/vfs/DatArchiveDriver.h
-    include/falltergeist/vfs/DatArchiveFile.h
-    include/falltergeist/vfs/DatArchiveStreamWrapper.h
-    include/falltergeist/vfs/IDriver.h
-    include/falltergeist/vfs/IFile.h
-    include/falltergeist/vfs/MemoryDriver.h
-    include/falltergeist/vfs/MemoryFile.h
-    include/falltergeist/vfs/NativeDriver.h
-    include/falltergeist/vfs/NativeFile.h
-    include/falltergeist/vfs/VFS.h
-    include/falltergeist/vfs.h
+    falltergeist/vfs/DatArchiveDriver.h
+    falltergeist/vfs/DatArchiveFile.h
+    falltergeist/vfs/DatArchiveStreamWrapper.h
+    falltergeist/vfs/IDriver.h
+    falltergeist/vfs/IFile.h
+    falltergeist/vfs/MemoryDriver.h
+    falltergeist/vfs/MemoryFile.h
+    falltergeist/vfs/NativeDriver.h
+    falltergeist/vfs/NativeFile.h
+    falltergeist/vfs/VFS.h
+    falltergeist/vfs.h
 )
-foreach(header ${PUBLIC_HEADERS})
-    file(RELATIVE_PATH header_file_path "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}" "${header}")
-    get_filename_component(header_directory_path "${header_file_path}" DIRECTORY)
-    install(
-        FILES ${header}
-        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${header_directory_path}"
-    )
-endforeach()
+
+install(FILES ${PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 target_link_libraries(
     ${PROJECT_NAME}
