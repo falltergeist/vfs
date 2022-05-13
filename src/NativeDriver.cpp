@@ -1,5 +1,5 @@
-#include "NativeDriver.h"
-#include "NativeFile.h"
+#include "falltergeist/vfs/NativeDriver.h"
+#include "falltergeist/vfs/NativeFile.h"
 #include <filesystem>
 
 namespace Falltergeist::VFS {

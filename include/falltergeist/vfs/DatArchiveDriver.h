@@ -1,8 +1,8 @@
 #pragma once
 
-#include "IDriver.h"
 #include "DatArchiveEntry.h"
 #include "DatArchiveStreamWrapper.h"
+#include "IDriver.h"
 #include <map>
 #include <memory>
 

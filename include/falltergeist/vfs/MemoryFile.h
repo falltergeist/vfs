@@ -1,7 +1,7 @@
 #pragma once
 
-#include <vector>
 #include "IFile.h"
+#include <vector>
 
 namespace Falltergeist::VFS {
     class MemoryDriver;

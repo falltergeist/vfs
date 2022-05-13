@@ -1,7 +1,7 @@
 #pragma once
 
-#include "IFile.h"
 #include "DatArchiveEntry.h"
+#include "IFile.h"
 #include <functional>
 
 namespace Falltergeist::VFS {
