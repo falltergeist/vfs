@@ -1,5 +1,6 @@
 Under development
 -----------------
+- [feature] Extract DAT2 module into standalone package (alexeevdv)
 
 0.2.0 (2022-05-13)
 -----------------

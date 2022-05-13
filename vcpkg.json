@@ -1,7 +1,6 @@
 {
-  "name": "vfs",
+  "name": "falltergeist-vfs",
   "version-string": "0.2.0",
   "dependencies": [
-    "zlib"
   ]
 }
