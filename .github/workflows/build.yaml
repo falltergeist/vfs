@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: install build dependencies
-        run: sudo apt install -y build-essential cmake zlib1g-dev
+        run: sudo apt install -y build-essential cmake
       - name: cmake
         run: cmake -DUSE_CLANG_TIDY=1 .
       - name: make
@@ -21,7 +21,7 @@ jobs:
          run: |
            brew install llvm
            ln -s "/usr/local/opt/llvm/bin/clang-tidy" "/usr/local/bin/clang-tidy"
-           brew install cmake zlib
+           brew install cmake
        - name: cmake
          run: cmake -DUSE_CLANG_TIDY=1 .
        - name: make
