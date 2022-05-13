@@ -29,7 +29,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS NO
     VERSION ${PROJECT_VERSION}
-    PUBLIC_HEADER include/falltergeist/vfs/vfs.h
+    PUBLIC_HEADER include/falltergeist/vfs.h
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -42,6 +42,29 @@ target_include_directories(${PROJECT_NAME}
         # where external projects will look for the library's public headers
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
 )
+
+# without it public headers won't get installed
+set(PUBLIC_HEADERS
+    include/falltergeist/vfs/DatArchiveDriver.h
+    include/falltergeist/vfs/DatArchiveFile.h
+    include/falltergeist/vfs/DatArchiveStreamWrapper.h
+    include/falltergeist/vfs/IDriver.h
+    include/falltergeist/vfs/IFile.h
+    include/falltergeist/vfs/MemoryDriver.h
+    include/falltergeist/vfs/MemoryFile.h
+    include/falltergeist/vfs/NativeDriver.h
+    include/falltergeist/vfs/NativeFile.h
+    include/falltergeist/vfs/VFS.h
+    include/falltergeist/vfs.h
+)
+foreach(header ${PUBLIC_HEADERS})
+    file(RELATIVE_PATH header_file_path "${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}" "${header}")
+    get_filename_component(header_directory_path "${header_file_path}" DIRECTORY)
+    install(
+        FILES ${header}
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/${header_directory_path}"
+    )
+endforeach()
 
 target_link_libraries(
     ${PROJECT_NAME}
