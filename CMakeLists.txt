@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(falltergeist_vfs VERSION 0.1.0 DESCRIPTION "Virtual File System")
+project(falltergeist_vfs VERSION 0.2.0 DESCRIPTION "Virtual File System")
 
 find_package(ZLIB REQUIRED)
 if(NOT ZLIB_FOUND)
