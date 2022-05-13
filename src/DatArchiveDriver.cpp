@@ -1,6 +1,6 @@
-#include "DatArchiveDriver.h"
-#include "DatArchiveFile.h"
-#include "MemoryFile.h"
+#include "falltergeist/vfs/DatArchiveDriver.h"
+#include "falltergeist/vfs/DatArchiveFile.h"
+#include "falltergeist/vfs/MemoryFile.h"
 #include "zlib.h"
 #include <algorithm>
 
