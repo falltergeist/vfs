@@ -1,4 +1,4 @@
-#include "../include/falltergeist/vfs/MemoryDriver.h"
+#include "MemoryDriver.h"
 
 namespace Falltergeist::VFS {
     MemoryDriver::MemoryDriver() : _name("MemoryDriver") {

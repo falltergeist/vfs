@@ -1,4 +1,4 @@
-#include "../include/falltergeist/vfs/NativeFile.h"
+#include "NativeFile.h"
 
 #include <cassert>
 

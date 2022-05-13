@@ -45,20 +45,18 @@ target_include_directories(${PROJECT_NAME}
 
 # without it public headers won't get installed
 set(PUBLIC_HEADERS
-    falltergeist/vfs/DatArchiveDriver.h
-    falltergeist/vfs/DatArchiveFile.h
-    falltergeist/vfs/DatArchiveStreamWrapper.h
-    falltergeist/vfs/IDriver.h
-    falltergeist/vfs/IFile.h
-    falltergeist/vfs/MemoryDriver.h
-    falltergeist/vfs/MemoryFile.h
-    falltergeist/vfs/NativeDriver.h
-    falltergeist/vfs/NativeFile.h
-    falltergeist/vfs/VFS.h
-    falltergeist/vfs.h
+    src/DatArchiveDriver.h
+    src/DatArchiveFile.h
+    src/DatArchiveStreamWrapper.h
+    src/IDriver.h
+    src/IFile.h
+    src/MemoryDriver.h
+    src/MemoryFile.h
+    src/NativeDriver.h
+    src/NativeFile.h
+    src/VFS.h
 )
-
-install(FILES ${PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(FILES ${PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/falltergeist/vfs)
 
 target_link_libraries(
     ${PROJECT_NAME}

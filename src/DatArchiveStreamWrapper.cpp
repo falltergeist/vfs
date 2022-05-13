@@ -1,4 +1,4 @@
-#include "../include/falltergeist/vfs/DatArchiveStreamWrapper.h"
+#include "DatArchiveStreamWrapper.h"
 #include <algorithm>
 #include <string>
 

@@ -1,4 +1,4 @@
-#include "../include/falltergeist/vfs/MemoryFile.h"
+#include "MemoryFile.h"
 
 #include <cstring>
 
