@@ -1,9 +1,9 @@
 #pragma once
 
-#include <map>
-#include <memory>
 #include "IDriver.h"
 #include "MemoryFile.h"
+#include <map>
+#include <memory>
 
 namespace Falltergeist::VFS {
     /**

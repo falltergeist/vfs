@@ -1,8 +1,8 @@
-#include "DatArchiveDriver.h"
-#include "DatArchiveFile.h"
-#include "MemoryFile.h"
-#include <algorithm>
+#include "falltergeist/vfs/DatArchiveDriver.h"
+#include "falltergeist/vfs/DatArchiveFile.h"
+#include "falltergeist/vfs/MemoryFile.h"
 #include "zlib.h"
+#include <algorithm>
 
 namespace Falltergeist::VFS {
     DatArchiveDriver::DatArchiveDriver(const std::string& path) : _name("DatArchiveDriver"), _streamWrapper(DatArchiveStreamWrapper(path)) {
