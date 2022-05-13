@@ -1,6 +1,10 @@
 Under development
 -----------------
 
+0.3.0 (2022-05-13)
+-----------------
+- [feature] Extract DAT2 module into standalone package (alexeevdv)
+
 0.2.0 (2022-05-13)
 -----------------
 - [bug] Project structure does not allow to use it as CMake submodule (alexeevdv)
