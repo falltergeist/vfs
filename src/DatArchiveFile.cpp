@@ -1,4 +1,4 @@
-#include "DatArchiveFile.h"
+#include "../include/falltergeist/vfs/DatArchiveFile.h"
 #include <algorithm>
 
 namespace Falltergeist::VFS {

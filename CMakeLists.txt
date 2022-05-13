@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project (vfs VERSION 0.1.0 DESCRIPTION "Virtual File System")
+project(falltergeist_vfs VERSION 0.1.0 DESCRIPTION "Virtual File System")
 
 # initializes ${CMAKE_INSTALL_*DIR} to sane defaults
 include(GNUInstallDirs)
@@ -10,49 +10,46 @@ if(NOT ZLIB_FOUND)
 endif(NOT ZLIB_FOUND)
 include_directories(SYSTEM ${ZLIB_INCLUDE_DIRS})
 
-add_library(falltergeist_vfs
-    src/DatArchiveDriver.cpp
-    src/DatArchiveFile.cpp
-    src/DatArchiveStreamWrapper.cpp
-    src/MemoryDriver.cpp
-    src/MemoryFile.cpp
-    src/NativeDriver.cpp
-    src/NativeFile.cpp
-    src/VFS.cpp
+add_library(${PROJECT_NAME} STATIC)
+
+target_sources(${PROJECT_NAME}
+    PRIVATE
+        src/DatArchiveDriver.cpp
+        src/DatArchiveFile.cpp
+        src/DatArchiveStreamWrapper.cpp
+        src/MemoryDriver.cpp
+        src/MemoryFile.cpp
+        src/NativeDriver.cpp
+        src/NativeFile.cpp
+        src/VFS.cpp
 )
 
-list(APPEND HEADER_FILES_LIST
-    src/DatArchiveDriver.h
-    src/DatArchiveEntry.h
-    src/DatArchiveFile.h
-    src/DatArchiveStreamWrapper.h
-    src/IDriver.h
-    src/IFile.h
-    src/MemoryDriver.h
-    src/MemoryFile.h
-    src/NativeDriver.h
-    src/NativeFile.h
-    src/VFS.h
-)
-list(JOIN HEADER_FILES_LIST "\;" HEADER_FILES_LIST_STRING)
-
-set_target_properties(falltergeist_vfs PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED YES
     CXX_EXTENSIONS NO
     VERSION ${PROJECT_VERSION}
-    PUBLIC_HEADER ${HEADER_FILES_LIST_STRING}
+    PUBLIC_HEADER include/falltergeist/vfs/vfs.h
 )
 
-target_include_directories(falltergeist_vfs PRIVATE src)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE
+        # where the library itself will look for its internal headers
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+    PUBLIC
+        # where top-level project will look for the library's public headers
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        # where external projects will look for the library's public headers
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+)
 
 target_link_libraries(
-    falltergeist_vfs
+    ${PROJECT_NAME}
     ${ZLIB_LIBRARIES}
 )
 
-install(
-    TARGETS falltergeist_vfs
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/falltergeist/vfs
-)
+#install(
+#    TARGETS ${PROJECT_NAME}
+#    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+#    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/falltergeist/vfs
+#)

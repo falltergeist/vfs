@@ -1,9 +1,9 @@
 #pragma once
 
 #include "IFile.h"
-#include <string>
-#include <fstream>
 #include <filesystem>
+#include <fstream>
+#include <string>
 
 namespace Falltergeist::VFS {
     class NativeDriver;

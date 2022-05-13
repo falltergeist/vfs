@@ -1,4 +1,4 @@
-#include "VFS.h"
+#include "../include/falltergeist/vfs/VFS.h"
 
 namespace Falltergeist::VFS {
 
