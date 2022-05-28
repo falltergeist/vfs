@@ -2,9 +2,6 @@
 
 namespace Falltergeist::VFS {
 
-    VFS::VFS() {
-    }
-
     void VFS::addMount(const std::string& path, std::unique_ptr<IDriver>&& driver) {
         _mounts.insert(std::make_pair(path, std::move(driver)));
     }

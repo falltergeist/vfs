@@ -1,15 +1,11 @@
 cmake_minimum_required(VERSION 3.8)
-project(falltergeist_vfs VERSION 0.3.0 DESCRIPTION "Virtual File System")
+project(falltergeist_vfs VERSION 0.4.0 DESCRIPTION "Virtual File System")
 
 add_library(${PROJECT_NAME} STATIC)
 add_library(falltergeist::vfs ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
     PRIVATE
-        src/MemoryDriver.cpp
-        src/MemoryFile.cpp
-        src/NativeDriver.cpp
-        src/NativeFile.cpp
         src/VFS.cpp
 )
 
