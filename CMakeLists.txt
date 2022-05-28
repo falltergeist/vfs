@@ -6,8 +6,6 @@ add_library(falltergeist::vfs ALIAS ${PROJECT_NAME})
 
 target_sources(${PROJECT_NAME}
     PRIVATE
-        src/NativeDriver.cpp
-        src/NativeFile.cpp
         src/VFS.cpp
 )
 
