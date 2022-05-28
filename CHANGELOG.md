@@ -1,5 +1,6 @@
 Under development
 -----------------
+- [feature] Extract memory module into standalone package (alexeevdv)
 - [feature] Remove zlib dependency from pipeline (alexeevdv)
 
 0.3.0 (2022-05-13)
