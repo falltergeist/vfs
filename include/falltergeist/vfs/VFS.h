@@ -9,7 +9,7 @@
 namespace Falltergeist::VFS {
     class VFS final {
     public:
-        VFS();
+        VFS() = default;
 
         VFS(const VFS& other) = delete;
 
