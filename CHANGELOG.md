@@ -1,4 +1,6 @@
 Under development
+
+0.4.0 (2022-05-28)
 -----------------
 - [feature] Extract memory module into standalone package (alexeevdv)
 - [feature] Extract native module into standalone package (alexeevdv)
